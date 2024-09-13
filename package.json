@@ -2,40 +2,45 @@
   "name": "tabular-aligner",
   "displayName": "Tabular Aligner",
   "description": "Flexible text aligner, inspired by tabular.vim.",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "repository": "github:yiding/vscode-tabular-aligner",
   "engines": {
-    "vscode": "^1.93.0"
+    "vscode": "^1.92.0"
   },
   "categories": [
-    "Other"
+    "Formatters"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "tabular-aligner.helloWorld",
-        "title": "Hello World"
+        "command": "tabular-aligner.tabularize",
+        "title": "Tabular Aligner"
       }
     ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
+    "compile": "vite build",
+    "watch": "vite build --watch",
+    "package": "vsce package",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.93.0",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
+    "@types/vscode": "^1.92.0",
     "@typescript-eslint/eslint-plugin": "^8.3.0",
     "@typescript-eslint/parser": "^8.3.0",
-    "eslint": "^9.9.1",
-    "typescript": "^5.5.4",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^3.1.0",
+    "eslint": "^9.9.1",
+    "immutable": "^4.3.7",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.5"
   }
 }

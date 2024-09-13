@@ -6,7 +6,13 @@
 		{
 			"type": "npm",
 			"script": "watch",
-			"problemMatcher": "$tsc-watch",
+			"problemMatcher": {
+				"base": "$tsc-watch",
+				"background": {
+					"beginsPattern": "^build started...$",
+					"endsPattern": "^built in .*.$", 
+				}
+			},
 			"isBackground": true,
 			"presentation": {
 				"reveal": "never"
